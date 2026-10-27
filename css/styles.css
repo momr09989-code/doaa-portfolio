@@ -1,0 +1,462 @@
+/* ==========================================================================
+   Doaa Mohamed Salah - Personal Portfolio Stylesheet
+   Aesthetic: Quiet Luxury & Editorial Charcoal
+   Palette: #181818 | #242424 | #C09891 | #BEA8A7 | #F4DBD8
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@400;600;700&family=Fira+Code:wght@400;500&display=swap');
+
+/* ==========================================================================
+   Strict Color System & Theme Variables
+   ========================================================================== */
+:root {
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-ar-serif: 'Amiri', serif;
+  --font-ar-sans: 'Cairo', system-ui, sans-serif;
+  --font-mono: 'Fira Code', monospace;
+
+  /* --- Dark Mode (Default - Editorial Charcoal & Soft Silver) --- */
+  --bg-primary: #181818;                 /* Deep charcoal/off-black tone - strictly desaturated */
+  --bg-secondary: #242424;               /* Medium-dark slate gray tone */
+  --bg-nav: rgba(24, 24, 24, 0.92);
+  --bg-card: rgba(40, 40, 40, 0.70);    /* Desaturated gray with backdrop blur */
+  --bg-card-hover: rgba(50, 50, 50, 0.85);
+  --bg-subtle: rgba(255, 255, 255, 0.04);
+
+  --accent-primary: #C09891;            /* Soft silver / dusty warm gray */
+  --accent-secondary: #BEA8A7;          /* Pale ash gray */
+  --text-primary: #F4DBD8;              /* Soft luxurious off-white */
+  --text-secondary: #BEA8A7;            /* Muted ash gray */
+  --text-muted: #888888;                /* Clean neutral muted gray */
+
+  --border-hairline: rgba(255, 255, 255, 0.07);
+  --border-hover: rgba(192, 152, 145, 0.35);
+  --border-strong: rgba(192, 152, 145, 0.60);
+
+  --sheen-spotlight: rgba(255, 255, 255, 0.04);
+  --ambient-glow-1: rgba(255, 255, 255, 0.025);
+  --ambient-glow-2: rgba(192, 152, 145, 0.025);
+
+  --card-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.50);
+  --modal-backdrop: rgba(12, 12, 12, 0.88);
+}
+
+/* --- Light Mode (Classic Alabaster & Muted Slate) --- */
+html.light {
+  --bg-primary: #F4DBD8;                 /* Soft, silky off-white as main canvas */
+  --bg-secondary: #FFFFFF;
+  --bg-nav: rgba(244, 219, 216, 0.92);
+  --bg-card: #FFFFFF;                    /* Crisp white with subtle border */
+  --bg-card-hover: #FAFAFA;
+  --bg-subtle: rgba(24, 24, 24, 0.04);
+
+  --accent-primary: #242424;            /* Deep charcoal for primary buttons and markers */
+  --accent-secondary: #775144;          /* Medium-dark gray for borders and subtle details */
+  --text-primary: #181818;              /* Off-black for sharp typography */
+  --text-secondary: #555555;            /* Muted gray for readable text */
+  --text-muted: #777777;
+
+  --border-hairline: rgba(24, 24, 24, 0.08);
+  --border-hover: rgba(24, 24, 24, 0.25);
+  --border-strong: rgba(24, 24, 24, 0.45);
+
+  --sheen-spotlight: rgba(24, 24, 24, 0.03);
+  --ambient-glow-1: rgba(24, 24, 24, 0.02);
+  --ambient-glow-2: rgba(24, 24, 24, 0.02);
+
+  --card-shadow: 0 12px 32px rgba(24, 24, 24, 0.04);
+  --modal-backdrop: rgba(24, 24, 24, 0.60);
+}
+
+/* ==========================================================================
+   Base & Global Typography
+   ========================================================================== */
+html {
+  scroll-behavior: initial;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  transition: background-color 0.5s cubic-bezier(0.16, 1, 0.3, 1), color 0.5s ease;
+}
+
+html[dir="rtl"] {
+  font-family: var(--font-ar-sans);
+}
+
+body {
+  overflow-x: hidden;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  position: relative;
+  transition: background-color 0.5s cubic-bezier(0.16, 1, 0.3, 1), color 0.5s ease;
+}
+
+/* Editorial Serif Headings */
+.editorial-title {
+  font-family: var(--font-serif);
+  letter-spacing: -0.025em;
+  font-weight: 600;
+}
+
+html[dir="rtl"] .editorial-title {
+  font-family: var(--font-ar-serif);
+  letter-spacing: normal;
+}
+
+.serif-italic {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* Code Typography & LTR Isolation */
+.code-font, pre, code, .terminal-window, .hero-interactive-card pre {
+  font-family: var(--font-mono);
+  direction: ltr !important;
+  text-align: left !important;
+  unicode-bidi: isolate;
+}
+
+/* ==========================================================================
+   Ambient Background Lighting (Subtle Cashmere / Rose Sheen)
+   ========================================================================== */
+.ambient-glow-mesh {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.glow-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(140px);
+  will-change: transform;
+  pointer-events: none;
+  transition: background 0.6s ease;
+}
+
+.glow-orb-1 {
+  width: 600px;
+  height: 600px;
+  top: -5%;
+  right: -10%;
+  background: radial-gradient(circle, var(--ambient-glow-1) 0%, transparent 70%);
+}
+
+.glow-orb-2 {
+  width: 550px;
+  height: 550px;
+  bottom: 10%;
+  left: -8%;
+  background: radial-gradient(circle, var(--ambient-glow-2) 0%, transparent 70%);
+}
+
+/* Hairline Editorial Dividers */
+.hairline-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border-hairline), transparent);
+}
+
+/* ==========================================================================
+   Editorial Hero Profile Portrait & Luxury Framing
+   ========================================================================== */
+.hero-profile-floating {
+  will-change: transform;
+}
+
+.hero-profile-card {
+  border-radius: 26px;
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.40);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  position: relative;
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+html.light .hero-profile-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(24, 24, 24, 0.08);
+  box-shadow: 0 12px 32px rgba(24, 24, 24, 0.04);
+}
+
+.hero-profile-img-wrap {
+  aspect-ratio: 3 / 4;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: var(--bg-secondary);
+}
+
+html.light .hero-profile-img-wrap {
+  border: 1px solid rgba(24, 24, 24, 0.08);
+  background: #EDE0DD;
+}
+
+.hero-profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.hero-profile-card:hover .hero-profile-img {
+  transform: scale(1.035);
+}
+
+.hero-profile-badge {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  background: rgba(30, 30, 30, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 0.75rem 0.95rem;
+  box-shadow: 0 12px 28px -6px rgba(0, 0, 0, 0.35);
+  pointer-events: none;
+  z-index: 2;
+  transition: background-color 0.4s ease;
+}
+
+html.light .hero-profile-badge {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(24, 24, 24, 0.08);
+  box-shadow: 0 12px 28px -6px rgba(24, 24, 24, 0.06);
+}
+
+/* ==========================================================================
+   Luxury Preloader Page
+   ========================================================================== */
+#preloader {
+  background-color: #181818;
+  color: #F4DBD8;
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  will-change: transform;
+}
+
+.preloader-monogram {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  letter-spacing: 0.28em;
+  color: #C09891;
+  text-shadow: 0 0 20px rgba(192, 152, 145, 0.25);
+}
+
+.preloader-line-track {
+  width: 100%;
+  height: 1.5px;
+  background: rgba(255, 255, 255, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.preloader-line-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #242424, #C09891, #F4DBD8);
+  box-shadow: 0 0 10px rgba(192, 152, 145, 0.4);
+}
+
+/* ==========================================================================
+   Classy Cards & 3D Tilt Engine
+   ========================================================================== */
+.glass-panel {
+  background: var(--bg-card);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid var(--border-hairline);
+  box-shadow: var(--card-shadow);
+  transition: border-color 0.35s ease, background-color 0.45s ease, box-shadow 0.35s ease;
+  position: relative;
+}
+
+.glass-panel:hover {
+  border-color: var(--border-hover);
+}
+
+/* 3D Perspective Tilt Card */
+.tilt-card {
+  transform-style: preserve-3d;
+  will-change: transform;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Cursor Sheen Spotlight Overlay */
+.tilt-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    circle 360px at var(--mouse-x, -1000px) var(--mouse-y, -1000px),
+    var(--sheen-spotlight),
+    transparent 65%
+  );
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+
+.tilt-card:hover::after {
+  opacity: 1;
+}
+
+/* Editorial Pill Buttons */
+.classy-pill-btn {
+  border-radius: 9999px;
+  padding: 0.75rem 1.75rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  font-size: 0.875rem;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-primary-classy {
+  background: var(--accent-primary);
+  color: #181818;
+  box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.35);
+}
+
+html.light .btn-primary-classy {
+  background: #242424;
+  color: #F4DBD8;
+  box-shadow: 0 8px 24px -4px rgba(24, 24, 24, 0.15);
+}
+
+.btn-primary-classy:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+}
+
+.btn-secondary-classy {
+  background: var(--bg-subtle);
+  color: var(--text-primary);
+  border: 1px solid var(--border-hairline);
+}
+
+.btn-secondary-classy:hover {
+  border-color: var(--border-hover);
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
+}
+
+html.light .btn-secondary-classy:hover {
+  background: rgba(24, 24, 24, 0.06);
+}
+
+/* Editorial Tech Stack Badges */
+.tech-tag {
+  background: var(--bg-subtle);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-hairline);
+  padding: 0.35rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  letter-spacing: 0.015em;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+}
+
+.tech-tag:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent-primary);
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+html.light .tech-tag:hover {
+  background: rgba(24, 24, 24, 0.05);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+}
+html.light ::-webkit-scrollbar-thumb {
+  background: rgba(24, 24, 24, 0.20);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-primary);
+}
+
+/* Floating WhatsApp Button */
+.wa-float-btn {
+  background: #242424;
+  color: #F4DBD8;
+  box-shadow: 0 10px 30px -4px rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.wa-float-btn:hover {
+  transform: translateY(-4px) scale(1.05);
+  background: #C09891;
+  color: #181818;
+  box-shadow: 0 14px 36px -4px rgba(0, 0, 0, 0.40);
+}
+
+/* Modals */
+.modal-backdrop {
+  background-color: var(--modal-backdrop);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* Lightbox Image Preview */
+.lightbox-img {
+  max-height: 84vh;
+  object-fit: contain;
+  border-radius: 0.75rem;
+  border: 1px solid var(--border-hairline);
+}
+
+/* Lenis Smooth Scroll Recommended CSS */
+html.lenis, html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}

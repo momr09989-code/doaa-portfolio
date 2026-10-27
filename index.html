@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Doaa Mohamed Salah | Web Developer &amp; Data Engineer</title>
+  <meta name="description" content="Editorial Portfolio of Doaa Mohamed Salah - Web Developer &amp; Data Engineer specializing in C#, ASP.NET Core MVC, Python, SQL, and Power BI." />
+
+  <!-- Google Fonts: Playfair Display + Plus Jakarta Sans + Amiri / Cairo + Fira Code -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@400;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- FontAwesome 6 CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            classy: {
+              charcoal: '#181818',
+              slate: '#242424',
+              silver: '#C09891',
+              ash: '#BEA8A7',
+              offwhite: '#F4DBD8'
+            }
+          },
+          fontFamily: {
+            serif: ['Playfair Display', 'Georgia', 'serif'],
+            sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+            mono: ['Fira Code', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom Stylesheet (Classy Editorial Theme) -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body class="min-h-screen relative selection:bg-[#C09891]/30 selection:text-[#F4DBD8]">
+
+  <!-- =========================================================================
+       Luxury GSAP Preloader Page (#181818 & Serif Monogram)
+       ========================================================================= -->
+  <div id="preloader" class="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[#181818] text-[#F4DBD8] select-none">
+    <!-- Ambient subtle neutral aura behind monogram -->
+    <div class="absolute w-[450px] h-[450px] rounded-full bg-white/[0.03] blur-[130px] pointer-events-none"></div>
+    
+    <div id="preloader-content" class="relative z-10 flex flex-col items-center max-w-md w-full px-8 text-center">
+      
+      <!-- Elegant Editorial Serif Monogram -->
+      <div class="mb-6 flex flex-col items-center justify-center">
+        <span class="preloader-monogram text-4xl sm:text-5xl font-serif italic tracking-[0.25em] text-[#C09891]">
+          D M S
+        </span>
+        <div class="w-12 h-[1px] bg-[#C09891]/40 mt-3"></div>
+      </div>
+
+      <!-- Typography Reveal -->
+      <h2 class="preloader-name text-2xl sm:text-3xl font-serif tracking-tight text-[#F4DBD8] mb-1.5 font-medium">
+        Doaa Mohamed Salah
+      </h2>
+      <p class="preloader-role text-xs uppercase tracking-[0.22em] text-[#BEA8A7] mb-10 font-sans">
+        Web Engineering &amp; Data Architecture
+      </p>
+
+      <!-- Hairline Progress Line and Percentage Counter -->
+      <div class="w-full max-w-xs space-y-3">
+        <div class="flex justify-between items-center text-xs font-mono tracking-wider">
+          <span class="text-[#BEA8A7]/80 text-[11px] uppercase">
+            Curating Portfolio
+          </span>
+          <span id="preloader-percent" class="font-bold text-[#C09891]">00%</span>
+        </div>
+        
+        <div class="preloader-line-track rounded-full">
+          <div id="preloader-bar" class="preloader-line-bar rounded-full"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       Ambient Background Lighting Mesh (Cashmere & Warm Mocha Sheen)
+       ========================================================================= -->
+  <div class="ambient-glow-mesh">
+    <div class="glow-orb glow-orb-1"></div>
+    <div class="glow-orb glow-orb-2"></div>
+  </div>
+
+  <!-- =========================================================================
+       Classy Editorial Header & Navigation
+       ========================================================================= -->
+  <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-400 border-b border-[var(--border-hairline)] bg-[var(--bg-nav)] backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between relative z-10">
+      
+      <!-- Brand Logo / Monogram -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-full border border-[var(--border-hairline)] bg-[var(--bg-subtle)] flex items-center justify-center text-[var(--accent-primary)] font-serif italic text-base group-hover:border-[var(--accent-primary)] transition-colors">
+          D
+        </div>
+        <div class="flex flex-col">
+          <span class="font-serif text-lg tracking-tight text-[var(--text-primary)] font-medium group-hover:text-[var(--accent-primary)] transition-colors">
+            Doaa Mohamed
+          </span>
+          <span class="text-[10px] uppercase tracking-[0.18em] text-[var(--text-secondary)] font-sans">
+            Software &bull; Data &bull; BI
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide text-[var(--text-secondary)]">
+        <a href="#about" class="hover:text-[var(--text-primary)] transition-colors" data-i18n="navAbout">About</a>
+        <a href="#experience" class="hover:text-[var(--text-primary)] transition-colors" data-i18n="navExp">Experience</a>
+        <a href="#projects" class="hover:text-[var(--text-primary)] transition-colors" data-i18n="navProjects">Projects</a>
+        <a href="#skills" class="hover:text-[var(--text-primary)] transition-colors" data-i18n="navSkills">Skills</a>
+        <a href="#certificates" class="hover:text-[var(--text-primary)] transition-colors" data-i18n="navCerts">Certifications</a>
+        <a href="#contact" class="hover:text-[var(--text-primary)] transition-colors" data-i18n="navContact">Contact</a>
+      </nav>
+
+      <!-- Action Items: Theme Toggle, Language & View CV -->
+      <div class="hidden md:flex items-center gap-3.5">
+        <!-- Theme Switcher Button -->
+        <button id="theme-toggle-btn" class="theme-toggle-btn w-10 h-10 rounded-full border border-[var(--border-hairline)] bg-[var(--bg-subtle)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:border-[var(--accent-primary)] flex items-center justify-center transition-all" title="Toggle Light/Dark Theme" aria-label="Toggle Theme">
+          <i id="theme-icon" class="fa-solid fa-moon text-sm"></i>
+        </button>
+
+        <!-- Bilingual Switcher Button -->
+        <button id="lang-toggle-btn" class="px-3.5 py-1.5 rounded-full border border-[var(--border-hairline)] bg-[var(--bg-subtle)] text-xs font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:border-[var(--accent-primary)] transition-all flex items-center gap-1.5" title="Switch Language">
+          <span class="font-bold text-[var(--accent-primary)]">عربي</span> <span class="text-[10px] text-[var(--text-muted)]">/ EN</span>
+        </button>
+
+        <!-- View CV Luxury Pill Button -->
+        <button class="open-cv-modal classy-pill-btn btn-primary-classy">
+          <i class="fa-solid fa-file-pdf text-xs"></i>
+          <span data-i18n="btnViewCV">View CV</span>
+        </button>
+      </div>
+
+      <!-- Mobile Menu Controls -->
+      <div class="flex items-center gap-2 md:hidden">
+        <button id="theme-toggle-btn-mobile" class="theme-toggle-btn w-9 h-9 rounded-full border border-[var(--border-hairline)] bg-[var(--bg-subtle)] text-[var(--text-secondary)] flex items-center justify-center" aria-label="Toggle Theme">
+          <i id="theme-icon-mobile" class="fa-solid fa-moon text-xs"></i>
+        </button>
+        <button id="lang-toggle-btn-mobile" class="px-2.5 py-1 rounded-full border border-[var(--border-hairline)] bg-[var(--bg-subtle)] text-xs text-[var(--accent-primary)] font-medium" onclick="document.getElementById('lang-toggle-btn').click();">
+          EN/عربي
+        </button>
+        <button id="mobile-menu-btn" class="p-2 rounded-xl text-[var(--text-secondary)] hover:text-[var(--text-primary)] focus:outline-none" aria-label="Toggle Menu">
+          <i class="fa-solid fa-bars text-lg"></i>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden border-b border-[var(--border-hairline)] bg-[var(--bg-secondary)] px-6 py-6 space-y-4">
+      <nav class="flex flex-col space-y-3.5 text-base font-medium text-[var(--text-secondary)]">
+        <a href="#about" class="mobile-nav-link hover:text-[var(--text-primary)] py-1" data-i18n="navAbout">About</a>
+        <a href="#experience" class="mobile-nav-link hover:text-[var(--text-primary)] py-1" data-i18n="navExp">Experience</a>
+        <a href="#projects" class="mobile-nav-link hover:text-[var(--text-primary)] py-1" data-i18n="navProjects">Projects</a>
+        <a href="#skills" class="mobile-nav-link hover:text-[var(--text-primary)] py-1" data-i18n="navSkills">Skills</a>
+        <a href="#certificates" class="mobile-nav-link hover:text-[var(--text-primary)] py-1" data-i18n="navCerts">Certifications</a>
+        <a href="#contact" class="mobile-nav-link hover:text-[var(--text-primary)] py-1" data-i18n="navContact">Contact</a>
+      </nav>
+      <div class="pt-4 border-t border-[var(--border-hairline)]">
+        <button class="open-cv-modal w-full classy-pill-btn btn-primary-classy justify-center">
+          <i class="fa-solid fa-file-pdf text-xs"></i>
+          <span data-i18n="btnViewCV">View Official CV</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       Hero Section (Editorial Serif & Glass Architectural Visual - NO PHOTO)
+       ========================================================================= -->
+  <section class="relative pt-32 pb-20 md:pt-44 md:pb-28 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        
+        <!-- Left Column: Editorial Hero Typography -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left rtl:lg:text-right">
+          
+          <!-- Availability Tag -->
+          <div class="hero-badge inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-[var(--border-hairline)] bg-[var(--bg-subtle)] text-xs tracking-wider text-[var(--accent-primary)] font-medium">
+            <span class="w-1.5 h-1.5 rounded-full bg-[var(--accent-primary)] animate-pulse"></span>
+            <span data-i18n="badgeAvailable">Open to Web Development &amp; Data Engineering Roles &bull; Giza, Egypt</span>
+          </div>
+
+          <!-- Main Editorial Name -->
+          <div class="space-y-1">
+            <p class="hero-subheading text-xs uppercase tracking-[0.22em] text-[var(--text-secondary)] font-mono" data-i18n="heroGreeting">
+              Portfolio &bull; 2026
+            </p>
+            <h1 class="hero-heading text-4xl sm:text-6xl lg:text-7xl font-serif font-semibold tracking-tight text-[var(--text-primary)] leading-[1.08]">
+              <span data-i18n="heroName">Doaa Mohamed Salah</span>
+            </h1>
+          </div>
+
+          <!-- Subtitle / Role -->
+          <div class="inline-block text-base sm:text-lg font-serif italic text-[var(--accent-primary)]">
+            <span data-i18n="heroRole">Web Developer | Data Engineer &amp; Data Analyst</span>
+          </div>
+
+          <!-- Summary Copy -->
+          <p class="hero-desc text-[var(--text-secondary)] text-sm sm:text-base leading-relaxed max-w-xl mx-auto lg:mx-0 font-sans" data-i18n="heroSummary">
+            Results-driven Software Engineer and Data Science enthusiast with hands-on experience delivering reliable web applications and data solutions using C#, ASP.NET Core MVC, JavaScript, Python, SQL, Java, and Power BI. Proven leadership in orchestrating project lifecycles, designing normalized relational data models (ERD), building ETL pipelines, and extracting actionable business intelligence from complex data.
+          </p>
+
+          <!-- Editorial CTA Action Buttons -->
+          <div class="hero-cta flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+            <a href="#projects" class="classy-pill-btn btn-primary-classy">
+              <span data-i18n="btnExploreProjects">Explore Projects</span>
+              <i class="fa-solid fa-arrow-right text-[11px] rtl:rotate-180"></i>
+            </a>
+
+            <button class="open-cv-modal classy-pill-btn btn-secondary-classy">
+              <i class="fa-solid fa-file-pdf text-xs text-[var(--accent-primary)]"></i>
+              <span data-i18n="btnViewCV">View Full CV</span>
+            </button>
+
+            <a href="https://wa.me/201115137318" target="_blank" rel="noopener noreferrer" class="classy-pill-btn btn-secondary-classy">
+              <i class="fa-brands fa-whatsapp text-sm text-[var(--accent-primary)]"></i>
+              <span data-i18n="btnContactWhatsApp">WhatsApp</span>
+            </a>
+          </div>
+
+          <!-- Quick Editorial Meta -->
+          <div class="pt-4 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-xs text-[var(--text-secondary)] font-mono border-t border-[var(--border-hairline)] max-w-lg">
+            <div class="flex items-center gap-1.5">
+              <i class="fa-solid fa-location-dot text-[var(--accent-primary)]"></i>
+              <span>Giza, Egypt</span>
+            </div>
+            <div class="flex items-center gap-1.5">
+              <i class="fa-solid fa-graduation-cap text-[var(--accent-primary)]"></i>
+              <span>BIS Graduate (Commerce &amp; BA)</span>
+            </div>
+            <div class="flex items-center gap-1.5">
+              <i class="fa-solid fa-certificate text-[var(--accent-primary)]"></i>
+              <span>DEPI &bull; NTI Certified</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Editorial Hero Profile Picture (3D Tilt & Gentle Float) -->
+        <div class="lg:col-span-5 flex justify-center hero-profile-col">
+          <div class="hero-profile-floating w-full max-w-[340px] sm:max-w-[380px]">
+            <div class="tilt-card hero-profile-card p-2.5 sm:p-3 cursor-pointer">
+              
+              <!-- 3:4 Editorial Portrait Aspect Ratio Container -->
+              <div class="hero-profile-img-wrap">
+                <img 
+                  src="assets/images/doaa-profile.webp" 
+                  alt="Doaa Mohamed Salah - Web Developer &amp; Data Specialist" 
+                  loading="eager" 
+                  class="hero-profile-img" 
+                />
+                
+                <!-- Subtle Editorial Gradient at the base -->
+                <div class="absolute inset-0 bg-gradient-to-t from-[var(--bg-primary)]/75 via-transparent to-transparent pointer-events-none opacity-70"></div>
+                
+                <!-- Floating Glassmorphic Editorial Credential Badge -->
+                <div class="hero-profile-badge flex items-center justify-between">
+                  <div>
+                    <div class="flex items-center gap-1.5 text-[10px] sm:text-[11px] font-mono text-[var(--accent-primary)] uppercase tracking-wider">
+                      <span class="w-1.5 h-1.5 rounded-full bg-[var(--accent-primary)] animate-pulse"></span>
+                      <span data-i18n="badgeRole">Software &amp; Data Engineer</span>
+                    </div>
+                    <p class="text-xs sm:text-[13px] font-serif font-medium text-[var(--text-primary)] mt-0.5" data-i18n="badgeCred">
+                      BIS &bull; DEPI &bull; NTI Certified
+                    </p>
+                  </div>
+                  <div class="w-8 h-8 rounded-full border border-[var(--border-hairline)] bg-[var(--bg-subtle)] flex items-center justify-center text-[var(--accent-primary)] text-xs shadow-sm">
+                    <i class="fa-solid fa-award"></i>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Refined Rose Gold Corner Accents -->
+              <div class="absolute -top-1 -right-1 w-5 h-5 border-t border-r border-[var(--accent-primary)]/50 rounded-tr-lg pointer-events-none"></div>
+              <div class="absolute -bottom-1 -left-1 w-5 h-5 border-b border-l border-[var(--accent-primary)]/50 rounded-bl-lg pointer-events-none"></div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       About & BIS Academic Foundation Section
+       ========================================================================= -->
+  <section id="about" class="py-20 md:py-28 relative border-t border-[var(--border-hairline)]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Section Header -->
+      <div class="section-header text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <span class="text-xs font-mono uppercase tracking-[0.22em] text-[var(--accent-primary)]" data-i18n="aboutSubtitle">
+          Bridging Software Architecture and Data Analytics
+        </span>
+        <h2 class="editorial-title text-3xl sm:text-5xl font-serif text-[var(--text-primary)]" data-i18n="aboutTitle">
+          About &amp; Academic Foundation
+        </h2>
+        <div class="w-16 h-[1.5px] bg-[var(--accent-primary)] mx-auto mt-3"></div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+        
+        <!-- BIS Degree & Focus Areas (Tilt Card) -->
+        <div class="lg:col-span-7 glass-panel tilt-card rounded-2xl p-7 sm:p-9 space-y-6">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-full border border-[var(--border-hairline)] bg-[var(--bg-subtle)] flex items-center justify-center text-[var(--accent-primary)] text-xl shrink-0">
+              <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+            <div>
+              <span class="text-xs font-mono text-[var(--accent-primary)] uppercase tracking-wider">Undergraduate Degree</span>
+              <h3 class="editorial-title text-xl sm:text-2xl font-serif text-[var(--text-primary)] mt-0.5">
+                Bachelor's Degree in Business Information Systems (BIS)
+              </h3>
+              <p class="text-sm text-[var(--text-secondary)] mt-1 font-sans">
+                Faculty of Commerce &amp; Business Administration &bull; Graduated
+              </p>
+            </div>
+          </div>
+
+          <p class="text-[var(--text-secondary)] leading-relaxed text-sm sm:text-base font-sans" data-i18n="aboutP1">
+            Graduated with a Bachelor's Degree in Business Information Systems (BIS) from the Faculty of Commerce &amp; Business Administration. My education provided a solid foundation in connecting core enterprise operations with modern technology.
+          </p>
+
+          <div class="space-y-3 pt-2">
+            <h4 class="text-xs font-mono uppercase tracking-wider text-[var(--accent-primary)]" data-i18n="aboutFocusTitle">
+              Academic &amp; Practical Focus Areas:
+            </h4>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm font-sans">
+              <div class="p-3.5 rounded-xl border border-[var(--border-hairline)] bg-[var(--bg-subtle)] text-[var(--text-secondary)] flex items-start gap-2.5">
+                <i class="fa-solid fa-diagram-project text-[var(--accent-primary)] mt-1 text-xs"></i>
+                <span data-i18n="focus1">Systems Analysis &amp; Design: Use Case Diagrams, Activity Flows, ERD, and Relational Schema Modeling.</span>
+              </div>
+              <div class="p-3.5 rounded-xl border border-[var(--border-hairline)] bg-[var(--bg-subtle)] text-[var(--text-secondary)] flex items-start gap-2.5">
+                <i class="fa-solid fa-database text-[var(--accent-primary)] mt-1 text-xs"></i>
+                <span data-i18n="focus2">Relational Database Engineering: Complex querying, normalization, and integrity constraints with SQL Server, Oracle &amp; MySQL.</span>
+              </div>
+              <div class="p-3.5 rounded-xl border border-[var(--border-hairline)] bg-[var(--bg-subtle)] text-[var(--text-secondary)] flex items-start gap-2.5">
+                <i class="fa-solid fa-cubes text-[var(--accent-primary)] mt-1 text-xs"></i>
+                <span data-i18n="focus3">Object-Oriented Development: Enterprise programming with C# (.NET Core) and Java.</span>
+              </div>
+              <div class="p-3.5 rounded-xl border border-[var(--border-hairline)] bg-[var(--bg-subtle)] text-[var(--text-secondary)] flex items-start gap-2.5">
+                <i class="fa-solid fa-chart-pie text-[var(--accent-primary)] mt-1 text-xs"></i>
+                <span data-i18n="focus4">Business Intelligence &amp; Analytics: ETL data pipelines, statistical modeling, and executive KPI reporting in Power BI.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Minimalist Luxury Metric Counters (Tilt Cards) -->
+        <div class="lg:col-span-5 grid grid-cols-2 gap-4">
+          
+          <div class="glass-panel tilt-card rounded-2xl p-6 flex flex-col justify-between">
+            <div class="w-10 h-10 rounded-full border border-[var(--border-hairline)] bg-[var(--bg-subtle)] text-[var(--accent-primary)] flex items-center justify-center text-base mb-4">
+              <i class="fa-solid fa-clock-rotate-left"></i>
+            </div>
+            <div>
+              <div class="text-3xl sm:text-4xl font-serif font-bold text-[var(--text-primary)] flex items-center">
+                <span class="stat-counter" data-target="200">0</span><span>+</span>
+              </div>
+              <div class="text-xs text-[var(--text-secondary)] mt-1.5 leading-snug font-sans" data-i18n="stat1Label">
+                DEPI MSDE Training Hours
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-panel tilt-card rounded-2xl p-6 flex flex-col justify-between">
+            <div class="w-10 h-10 rounded-full border border-[var(--border-hairline)] bg-[var(--bg-subtle)] text-[var(--accent-primary)] flex items-center justify-center text-base mb-4">
+              <i class="fa-solid fa-brain"></i>
+            </div>
+            <div>
+              <div class="text-3xl sm:text-4xl font-serif font-bold text-[var(--text-primary)] flex items-center">
+                <span class="stat-counter" data-target="80">0</span><span>+</span>
+              </div>
+              <div class="text-xs text-[var(--text-secondary)] mt-1.5 leading-snug font-sans" data-i18n="stat2Label">
+                NTI AI Ambassador Hours
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-panel tilt-card rounded-2xl p-6 flex flex-col justify-between">
+            <div class="w-10 h-10 rounded-full border border-[var(--border-hairline)] bg-[var(--bg-subtle)] text-[var(--accent-primary)] flex items-center justify-center text-base mb-4">
+              <i class="fa-solid fa-layer-group"></i>
+            </div>
+            <div>
+              <div class="text-3xl sm:text-4xl font-serif font-bold text-[var(--text-primary)] flex items-center">
+                <span class="stat-counter" data-target="4">0</span><span>+</span>
+              </div>
+              <div class="text-xs text-[var(--text-secondary)] mt-1.5 leading-snug font-sans" data-i18n="stat3Label">
+                Engineered Applications
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-panel tilt-card rounded-2xl p-6 flex flex-col justify-between">
+            <div class="w-10 h-10 rounded-full border border-[var(--border-hairline)] bg-[var(--bg-subtle)] text-[var(--accent-primary)] flex items-center justify-center text-base mb-4">
+              <i class="fa-solid fa-gem"></i>
+            </div>
+            <div>
+              <div class="text-3xl sm:text-4xl font-serif font-bold text-[var(--text-primary)] flex items-center">
+                <span class="stat-counter" data-target="2">0</span>
+              </div>
+              <div class="text-xs text-[var(--text-secondary)] mt-1.5 leading-snug font-sans" data-i18n="stat4Label">
+                Core Domains Mastered
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       Experience & Training Timeline Section
+       ========================================================================= -->
+  <section id="experience" class="py-20 md:py-28 relative border-t border-[var(--border-hairline)]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Section Header -->
+      <div class="section-header text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <span class="text-xs font-mono uppercase tracking-[0.22em] text-[var(--accent-primary)]" data-i18n="expSubtitle">
+          Career &amp; Training Milestones
+        </span>
+        <h2 class="editorial-title text-3xl sm:text-5xl font-serif text-[var(--text-primary)]" data-i18n="expTitle">
+          Work Experience &amp; Intensive Programs
+        </h2>
+        <div class="w-16 h-[1.5px] bg-[var(--accent-primary)] mx-auto mt-3"></div>
+      </div>
+
+      <!-- Vertical Editorial Timeline -->
+      <div class="relative border-l border-[var(--border-hairline)] ml-4 md:ml-32 space-y-12">
+        
+        <!-- Experience 1: Shifa Medical Platform -->
+        <div class="timeline-card relative pl-8 md:pl-10">
+          <div class="absolute -left-[5px] top-2 w-2.5 h-2.5 rounded-full bg-[var(--accent-primary)]"></div>
+          
+          <div class="glass-panel tilt-card rounded-2xl p-6 sm:p-8 space-y-4">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span class="px-3.5 py-1 rounded-full text-xs font-mono text-[var(--accent-primary)] border border-[var(--border-hairline)] bg-[var(--bg-subtle)]" data-i18n="exp1Type">
+                Featured Team Project
+              </span>
+              <span class="text-xs font-mono text-[var(--text-muted)]">Team Leadership &bull; Web Engineering</span>
+            </div>
+
+            <div>
+              <h3 class="editorial-title text-xl sm:text-2xl font-serif text-[var(--text-primary)]" data-i18n="exp1Role">
+                Web Developer &amp; Team Leader
+              </h3>
+              <p class="text-base text-[var(--accent-primary)] font-serif italic mt-0.5" data-i18n="exp1Org">
+                Shifa Medical Services Platform
+              </p>
+            </div>
+
+            <p class="text-[var(--text-secondary)] text-sm sm:text-base leading-relaxed font-sans" data-i18n="exp1Desc">
+              Orchestrated the entire development lifecycle from requirements gathering to delivery. Led system analysis, Use Case &amp; Activity modeling, and designed the normalized MS SQL Server relational database. Built core web modules using C# and ASP.NET Core MVC with responsive UI prototypes initially designed in Figma.
+            </p>
+
+            <div class="flex flex-wrap gap-2 pt-2">
+              <span class="tech-tag">C#</span>
+              <span class="tech-tag">ASP.NET Core MVC</span>
+              <span class="tech-tag">MS SQL Server</span>
+              <span class="tech-tag">ADO.NET</span>
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">Figma</span>
+              <span class="tech-tag">Draw.io / Visual Paradigm</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Experience 2: DEPI Microsoft Data Engineer (MSDE) -->
+        <div class="timeline-card relative pl-8 md:pl-10">
+          <div class="absolute -left-[5px] top-2 w-2.5 h-2.5 rounded-full bg-[var(--accent-primary)]"></div>
+          
+          <div class="glass-panel tilt-card rounded-2xl p-6 sm:p-8 space-y-4">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span class="px-3.5 py-1 rounded-full text-xs font-mono text-[var(--accent-primary)] border border-[var(--border-hairline)] bg-[var(--bg-subtle)]" data-i18n="exp2Type">
+                200 Training Hours
+              </span>
+              <span class="text-xs font-mono text-[var(--text-muted)]">Digital Egypt Pioneers Initiative (DEPI)</span>
+            </div>
+
+            <div>
+              <h3 class="editorial-title text-xl sm:text-2xl font-serif text-[var(--text-primary)]" data-i18n="exp2Role">
+                Microsoft Data Engineer (MSDE) - AI &amp; Data Science
+              </h3>
+              <p class="text-base text-[var(--accent-primary)] font-serif italic mt-0.5" data-i18n="exp2Org">
+                Digital Egypt Pioneers Initiative (DEPI) - Ministry of Communications (MCIT)
+              </p>
+            </div>
+
+            <p class="text-[var(--text-secondary)] text-sm sm:text-base leading-relaxed font-sans" data-i18n="exp2Desc">
+              Advanced program covering Python and SQL for high-volume database operations. Designed automated ETL pipelines, applied data cleaning and exploratory data analysis (EDA), applied statistical analysis, and implemented machine learning models on real-world datasets.
+            </p>
+
+            <div class="flex flex-wrap gap-2 pt-2">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">SQL Complex Queries</span>
+              <span class="tech-tag">ETL Pipelines</span>
+              <span class="tech-tag">Data Cleaning</span>
+              <span class="tech-tag">EDA &amp; Statistics</span>
+              <span class="tech-tag">Machine Learning</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Experience 3: NTI Artificial Intelligence Ambassador -->
+        <div class="timeline-card relative pl-8 md:pl-10">
+          <div class="absolute -left-[5px] top-2 w-2.5 h-2.5 rounded-full bg-[var(--accent-primary)]"></div>
+          
+          <div class="glass-panel tilt-card rounded-2xl p-6 sm:p-8 space-y-4">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span class="px-3.5 py-1 rounded-full text-xs font-mono text-[var(--accent-primary)] border border-[var(--border-hairline)] bg-[var(--bg-subtle)]" data-i18n="exp3Type">
+                80 Training Hours (Beginner &amp; Advanced)
+              </span>
+              <span class="text-xs font-mono text-[var(--text-muted)]">National Telecommunication Institute</span>
+            </div>
+
+            <div>
+              <h3 class="editorial-title text-xl sm:text-2xl font-serif text-[var(--text-primary)]" data-i18n="exp3Role">
+                Artificial Intelligence Ambassador
+              </h3>
+              <p class="text-base text-[var(--accent-primary)] font-serif italic mt-0.5" data-i18n="exp3Org">
+                National Telecommunication Institute (NTI) &amp; ESE
+              </p>
+            </div>
+
+            <p class="text-[var(--text-secondary)] text-sm sm:text-base leading-relaxed font-sans" data-i18n="exp3Desc">
+              Studied modern AI principles, Machine Learning, and Natural Language Processing (NLP). Engineered interactive Power BI executive dashboards with KPI tracking and visual storytelling, leveraging Generative AI tools for workflow automation.
+            </p>
+
+            <div class="flex flex-wrap gap-2 pt-2">
+              <span class="tech-tag">Microsoft Power BI</span>
+              <span class="tech-tag">KPI Tracking</span>
+              <span class="tech-tag">Visual Storytelling</span>
+              <span class="tech-tag">NLP &amp; GenAI</span>
+              <span class="tech-tag">AI Ethics</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Experience 4: Banque Misr Banking Fellowship -->
+        <div class="timeline-card relative pl-8 md:pl-10">
+          <div class="absolute -left-[5px] top-2 w-2.5 h-2.5 rounded-full bg-[var(--accent-primary)]"></div>
+          
+          <div class="glass-panel tilt-card rounded-2xl p-6 sm:p-8 space-y-4">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span class="px-3.5 py-1 rounded-full text-xs font-mono text-[var(--accent-primary)] border border-[var(--border-hairline)] bg-[var(--bg-subtle)]" data-i18n="exp4Type">
+                Professional Banking Fellowship
+              </span>
+              <span class="text-xs font-mono text-[var(--text-muted)]">Banque Misr Training</span>
+            </div>
+
+            <div>
+              <h3 class="editorial-title text-xl sm:text-2xl font-serif text-[var(--text-primary)]" data-i18n="exp4Role">
+                Egyptian Banking System Model (EBSM) Fellowship
+              </h3>
+              <p class="text-base text-[var(--accent-primary)] font-serif italic mt-0.5" data-i18n="exp4Org">
+                Banque Misr Training
+              </p>
+            </div>
+
+            <p class="text-[var(--text-secondary)] text-sm sm:text-base leading-relaxed font-sans" data-i18n="exp4Desc">
+              Completed intensive practical sessions covering Financial Inclusion, Banking Operations, and financial institutions' workflows, gaining deep insight into enterprise banking processes and business process modeling.
+            </p>
+
+            <div class="flex flex-wrap gap-2 pt-2">
+              <span class="tech-tag">Financial Inclusion</span>
+              <span class="tech-tag">Banking Operations</span>
+              <span class="tech-tag">Business Workflow Design</span>
+              <span class="tech-tag">Institutional Analysis</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       Projects Showcase (NO GITHUB LINKS - Architecture & KPIs Details Inside)
+       ========================================================================= -->
+  <section id="projects" class="py-20 md:py-28 relative border-t border-[var(--border-hairline)]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Section Header -->
+      <div class="section-header text-center max-w-3xl mx-auto mb-12 space-y-3">
+        <span class="text-xs font-mono uppercase tracking-[0.22em] text-[var(--accent-primary)]" data-i18n="projectsSubtitle">
+          Selected Works &amp; Architecture
+        </span>
+        <h2 class="editorial-title text-3xl sm:text-5xl font-serif text-[var(--text-primary)]" data-i18n="projectsTitle">
+          Featured Engineering Projects
+        </h2>
+        <div class="w-16 h-[1.5px] bg-[var(--accent-primary)] mx-auto mt-3"></div>
+      </div>
+
+      <!-- Editorial Filter Controls -->
+      <div class="flex flex-wrap items-center justify-center gap-3 mb-12">
+        <button class="project-filter-btn px-5 py-2 rounded-full text-xs font-mono uppercase tracking-wider border transition-all bg-[var(--accent-primary)] text-[var(--bg-primary)] border-[var(--accent-primary)] font-bold" data-filter="all" data-i18n="filterAll">
+          All Systems
+        </button>
+        <button class="project-filter-btn px-5 py-2 rounded-full text-xs font-mono uppercase tracking-wider border transition-all bg-[var(--bg-subtle)] text-[var(--text-secondary)] border-[var(--border-hairline)] hover:text-[var(--text-primary)]" data-filter="web" data-i18n="filterWeb">
+          Web &amp; Enterprise
+        </button>
+        <button class="project-filter-btn px-5 py-2 rounded-full text-xs font-mono uppercase tracking-wider border transition-all bg-[var(--bg-subtle)] text-[var(--text-secondary)] border-[var(--border-hairline)] hover:text-[var(--text-primary)]" data-filter="data" data-i18n="filterData">
+          Data &amp; BI Analytics
+        </button>
+      </div>
+
+      <!-- Projects Grid (Tilt Cards) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Project 1: Shifa (Featured • Active Development) -->
+        <div class="project-card glass-panel tilt-card rounded-2xl p-7 sm:p-8 flex flex-col justify-between" data-category="web">
+          <div class="space-y-4">
+            <!-- Badges -->
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span class="px-3 py-1 rounded-full text-xs font-mono text-[var(--accent-primary)] border border-[var(--border-hairline)] bg-[var(--bg-subtle)] flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-[var(--accent-primary)] animate-pulse"></span>
+                Featured Project &bull; Active Development
+              </span>
+              <span class="text-xs font-mono text-[var(--text-muted)]">Team Leader &amp; Web Dev</span>
+            </div>
+
+            <!-- Title & Description -->
+            <h3 class="editorial-title text-xl sm:text-2xl font-serif text-[var(--text-primary)]">
+              Shifa - Clinic Appointments &amp; Nearby Pharmacies
+            </h3>
+            <p class="text-[var(--text-secondary)] text-sm sm:text-base leading-relaxed font-sans">
+              A modern web platform allowing patients to find doctors, book clinic appointments, and locate nearby pharmacies in one place. Backed by a normalized MS SQL Server relational database (covering patients, doctors, schedules, reviews, and pharmacies) with full ERD, Use Case, and Activity diagrams prototyped in Figma.
+            </p>
+
+            <!-- Tech Stack Tags -->
+            <div class="flex flex-wrap gap-1.5 pt-2">
+              <span class="tech-tag">C#</span>
+              <span class="tech-tag">ASP.NET Core MVC</span>
+              <span class="tech-tag">MS SQL Server</span>
+              <span class="tech-tag">ADO.NET</span>
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">Figma Prototype</span>
+            </div>
+          </div>
+
+          <!-- Bottom Action: System Architecture & KPIs Modal (NO GITHUB LINK) -->
+          <div class="pt-6 mt-6 border-t border-[var(--border-hairline)] flex items-center justify-between">
+            <button class="open-project-details w-full py-2.5 px-4 rounded-full border border-[var(--border-hairline)] bg-[var(--bg-subtle)] text-[var(--accent-primary)] hover:border-[var(--accent-primary)] text-xs sm:text-sm font-medium transition-all flex items-center justify-center gap-2" data-project-id="shifa">
+              <i class="fa-solid fa-diagram-project text-xs"></i>
+              <span data-i18n="btnDetails">System Architecture &amp; ERD Details</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Project 2: Retail Sales Performance Dashboard (Power BI) -->
+        <div class="project-card glass-panel tilt-card rounded-2xl p-7 sm:p-8 flex flex-col justify-between" data-category="data">
+          <div class="space-y-4">
+            <!-- Badges -->
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span class="px-3 py-1 rounded-full text-xs font-mono text-[var(--accent-primary)] border border-[var(--border-hairline)] bg-[var(--bg-subtle)] flex items-center gap-1.5">
+                <i class="fa-solid fa-chart-line text-xs"></i>
+                NTI Final Capstone &bull; Business Intelligence
+              </span>
+              <span class="text-xs font-mono text-[var(--text-muted)]">Data Analyst</span>
+            </div>
+
+            <!-- Title & Description -->
+            <h3 class="editorial-title text-xl sm:text-2xl font-serif text-[var(--text-primary)]">
+              Retail Sales Performance Analytics Dashboard
+            </h3>
+            <p class="text-[var(--text-secondary)] text-sm sm:text-base leading-relaxed font-sans">
+              An interactive Power BI analytics suite analyzing retail performance across 6 major Egyptian cities. Features dynamic KPI tracking cards for Total Sales (95K+), Net Profit (36K+), and Order Volume with monthly trend lines and multi-dimensional category filtering.
+            </p>
+
+            <!-- Tech Stack Tags -->
+            <div class="flex flex-wrap gap-1.5 pt-2">
+              <span class="tech-tag">Microsoft Power BI</span>
+              <span class="tech-tag">DAX Measures</span>
+              <span class="tech-tag">KPI Tracking (95K+ Sales)</span>
+              <span class="tech-tag">Star Schema</span>
+              <span class="tech-tag">Visual Storytelling</span>
+            </div>
+          </div>
+
+          <!-- Bottom Action: System Architecture & KPIs Modal (NO GITHUB LINK) -->
+          <div class="pt-6 mt-6 border-t border-[var(--border-hairline)] flex items-center justify-between">
+            <button class="open-project-details w-full py-2.5 px-4 rounded-full border border-[var(--border-hairline)] bg-[var(--bg-subtle)] text-[var(--accent-primary)] hover:border-[var(--accent-primary)] text-xs sm:text-sm font-medium transition-all flex items-center justify-center gap-2" data-project-id="retail">
+              <i class="fa-solid fa-chart-pie text-xs"></i>
+              <span data-i18n="btnDetails">Analytics KPIs &amp; Star Schema Details</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Project 3: Clinic Management System (Desktop - Java / Oracle / MySQL) -->
+        <div class="project-card glass-panel tilt-card rounded-2xl p-7 sm:p-8 flex flex-col justify-between" data-category="web">
+          <div class="space-y-4">
+            <!-- Badges -->
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span class="px-3 py-1 rounded-full text-xs font-mono text-[var(--accent-primary)] border border-[var(--border-hairline)] bg-[var(--bg-subtle)]">
+                Desktop Application &bull; OOP Java
+              </span>
+              <span class="text-xs font-mono text-[var(--text-muted)]">Database Architect</span>
+            </div>
+
+            <!-- Title & Description -->
+            <h3 class="editorial-title text-xl sm:text-2xl font-serif text-[var(--text-primary)]">
+              Clinic Management System (Desktop)
+            </h3>
+            <p class="text-[var(--text-secondary)] text-sm sm:text-base leading-relaxed font-sans">
+              Engineered a desktop application to manage patient registrations, medical appointments, and physician schedules efficiently, backed by structured relational schemas in Oracle and MySQL with ACID transaction integrity constraints.
+            </p>
+
+            <!-- Tech Stack Tags -->
+            <div class="flex flex-wrap gap-1.5 pt-2">
+              <span class="tech-tag">Java (OOP)</span>
+              <span class="tech-tag">NetBeans IDE</span>
+              <span class="tech-tag">Oracle Database</span>
+              <span class="tech-tag">MySQL</span>
+              <span class="tech-tag">Relational Schema (ERD)</span>
+            </div>
+          </div>
+
+          <!-- Bottom Action: System Architecture & KPIs Modal (NO GITHUB LINK) -->
+          <div class="pt-6 mt-6 border-t border-[var(--border-hairline)] flex items-center justify-between">
+            <button class="open-project-details w-full py-2.5 px-4 rounded-full border border-[var(--border-hairline)] bg-[var(--bg-subtle)] text-[var(--accent-primary)] hover:border-[var(--accent-primary)] text-xs sm:text-sm font-medium transition-all flex items-center justify-center gap-2" data-project-id="clinic">
+              <i class="fa-solid fa-database text-xs"></i>
+              <span data-i18n="btnDetails">Database Schema &amp; DAO Architecture</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Project 4: Student GPA Calculator (Desktop App - JS / HTML / CSS) -->
+        <div class="project-card glass-panel tilt-card rounded-2xl p-7 sm:p-8 flex flex-col justify-between" data-category="web">
+          <div class="space-y-4">
+            <!-- Badges -->
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span class="px-3 py-1 rounded-full text-xs font-mono text-[var(--accent-primary)] border border-[var(--border-hairline)] bg-[var(--bg-subtle)]">
+                Algorithm &bull; Client Desktop
+              </span>
+              <span class="text-xs font-mono text-[var(--text-muted)]">Frontend Developer</span>
+            </div>
+
+            <!-- Title & Description -->
+            <h3 class="editorial-title text-xl sm:text-2xl font-serif text-[var(--text-primary)]">
+              Student GPA &amp; Academic Honors Calculator
+            </h3>
+            <p class="text-[var(--text-secondary)] text-sm sm:text-base leading-relaxed font-sans">
+              A calculator-style desktop application with an intuitive interface that calculates cumulative GPA and academic honors classifications based on variable credit-hour course weights and grading scales.
+            </p>
+
+            <!-- Tech Stack Tags -->
+            <div class="flex flex-wrap gap-1.5 pt-2">
+              <span class="tech-tag">JavaScript (ES6+)</span>
+              <span class="tech-tag">HTML5</span>
+              <span class="tech-tag">CSS3</span>
+              <span class="tech-tag">Credit Hour Weights</span>
+              <span class="tech-tag">Dynamic DOM</span>
+            </div>
+          </div>
+
+          <!-- Bottom Action: System Architecture & KPIs Modal (NO GITHUB LINK) -->
+          <div class="pt-6 mt-6 border-t border-[var(--border-hairline)] flex items-center justify-between">
+            <button class="open-project-details w-full py-2.5 px-4 rounded-full border border-[var(--border-hairline)] bg-[var(--bg-subtle)] text-[var(--accent-primary)] hover:border-[var(--accent-primary)] text-xs sm:text-sm font-medium transition-all flex items-center justify-center gap-2" data-project-id="gpa">
+              <i class="fa-solid fa-calculator text-xs"></i>
+              <span data-i18n="btnDetails">Calculation Logic &amp; UX Details</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       Skills Matrix Section (4 Editorial Categories - Tilt Cards)
+       ========================================================================= -->
+  <section id="skills" class="py-20 md:py-28 relative border-t border-[var(--border-hairline)]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Section Header -->
+      <div class="section-header text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <span class="text-xs font-mono uppercase tracking-[0.22em] text-[var(--accent-primary)]" data-i18n="skillsSubtitle">
+          Technical Proficiencies
+        </span>
+        <h2 class="editorial-title text-3xl sm:text-5xl font-serif text-[var(--text-primary)]" data-i18n="skillsTitle">
+          Skills &amp; Technologies Matrix
+        </h2>
+        <div class="w-16 h-[1.5px] bg-[var(--accent-primary)] mx-auto mt-3"></div>
+      </div>
+
+      <!-- 4 Organized Skill Category Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Category 1: Web Development -->
+        <div class="skill-category-card glass-panel tilt-card rounded-2xl p-6 space-y-4">
+          <div class="w-11 h-11 rounded-full border border-[var(--border-hairline)] bg-[var(--bg-subtle)] text-[var(--accent-primary)] flex items-center justify-center text-lg">
+            <i class="fa-solid fa-laptop-code"></i>
+          </div>
+          <h3 class="editorial-title text-lg font-serif text-[var(--text-primary)]" data-i18n="catWebTitle">
+            Web Development
+          </h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="tech-tag">C#</span>
+            <span class="tech-tag">ASP.NET Core MVC</span>
+            <span class="tech-tag">JavaScript (ES6+)</span>
+            <span class="tech-tag">HTML5 &amp; CSS3</span>
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">Vite</span>
+            <span class="tech-tag">Git &amp; GitHub</span>
+          </div>
+        </div>
+
+        <!-- Category 2: Data Engineering & Databases -->
+        <div class="skill-category-card glass-panel tilt-card rounded-2xl p-6 space-y-4">
+          <div class="w-11 h-11 rounded-full border border-[var(--border-hairline)] bg-[var(--bg-subtle)] text-[var(--accent-primary)] flex items-center justify-center text-lg">
+            <i class="fa-solid fa-database"></i>
+          </div>
+          <h3 class="editorial-title text-lg font-serif text-[var(--text-primary)]" data-i18n="catDataEngTitle">
+            Data Engineering &amp; Databases
+          </h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="tech-tag">SQL Complex Queries</span>
+            <span class="tech-tag">MS SQL Server</span>
+            <span class="tech-tag">Oracle Database</span>
+            <span class="tech-tag">MySQL</span>
+            <span class="tech-tag">ADO.NET</span>
+            <span class="tech-tag">RDBMS Normalization</span>
+            <span class="tech-tag">Data Modeling (ERD)</span>
+            <span class="tech-tag">ETL Pipelines</span>
+            <span class="tech-tag">Data Cleaning &amp; Transformation</span>
+          </div>
+        </div>
+
+        <!-- Category 3: Data Science, AI & BI -->
+        <div class="skill-category-card glass-panel tilt-card rounded-2xl p-6 space-y-4">
+          <div class="w-11 h-11 rounded-full border border-[var(--border-hairline)] bg-[var(--bg-subtle)] text-[var(--accent-primary)] flex items-center justify-center text-lg">
+            <i class="fa-solid fa-chart-pie"></i>
+          </div>
+          <h3 class="editorial-title text-lg font-serif text-[var(--text-primary)]" data-i18n="catAiBiTitle">
+            Data Science, AI &amp; BI
+          </h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Microsoft Power BI</span>
+            <span class="tech-tag">Artificial Intelligence (AI)</span>
+            <span class="tech-tag">Machine Learning (ML)</span>
+            <span class="tech-tag">NLP</span>
+            <span class="tech-tag">EDA &amp; Statistics</span>
+            <span class="tech-tag">Interactive Dashboards</span>
+            <span class="tech-tag">KPI Tracking</span>
+            <span class="tech-tag">Generative AI Tools</span>
+          </div>
+        </div>
+
+        <!-- Category 4: Tools, Soft Skills & Languages -->
+        <div class="skill-category-card glass-panel tilt-card rounded-2xl p-6 space-y-4">
+          <div class="w-11 h-11 rounded-full border border-[var(--border-hairline)] bg-[var(--bg-subtle)] text-[var(--accent-primary)] flex items-center justify-center text-lg">
+            <i class="fa-solid fa-compass-drafting"></i>
+          </div>
+          <h3 class="editorial-title text-lg font-serif text-[var(--text-primary)]" data-i18n="catToolsTitle">
+            Tools, Soft Skills &amp; Languages
+          </h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="tech-tag">Visual Studio</span>
+            <span class="tech-tag">NetBeans IDE</span>
+            <span class="tech-tag">Figma Prototype</span>
+            <span class="tech-tag">Draw.io &bull; Visual Paradigm</span>
+            <span class="tech-tag">Advanced Excel</span>
+            <span class="tech-tag text-[var(--accent-primary)]">Team Leadership</span>
+            <span class="tech-tag text-[var(--accent-primary)]">Analytical Problem Solving</span>
+            <span class="tech-tag text-[var(--accent-primary)]">Effective Communication</span>
+            <span class="tech-tag font-semibold">Arabic (Native)</span>
+            <span class="tech-tag font-semibold">English (B2 Upper-Int)</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       Certificates Gallery (Accredited Credentials - Lightbox Modal)
+       ========================================================================= -->
+  <section id="certificates" class="py-20 md:py-28 relative border-t border-[var(--border-hairline)]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Section Header -->
+      <div class="section-header text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <span class="text-xs font-mono uppercase tracking-[0.22em] text-[var(--accent-primary)]" data-i18n="certsSubtitle">
+          Accredited Credentials
+        </span>
+        <h2 class="editorial-title text-3xl sm:text-5xl font-serif text-[var(--text-primary)]" data-i18n="certsTitle">
+          Honors &amp; Official Certifications
+        </h2>
+        <div class="w-16 h-[1.5px] bg-[var(--accent-primary)] mx-auto mt-3"></div>
+      </div>
+
+      <!-- Certificates Grid (Tilt Cards) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        
+        <!-- Certificate 1: NTI Artificial Intelligence Ambassadors -->
+        <div class="open-cert-modal glass-panel tilt-card rounded-2xl overflow-hidden cursor-pointer group"
+             data-cert-src="assets/images/nti-certificate.webp"
+             data-cert-title="Artificial Intelligence Ambassadors Program — National Telecommunication Institute (NTI)"
+             data-cert-meta="Credential ID: AI (B9) - 1210 | Ministry of Communications & Information Technology (MCIT) & ESE | Date: 05-09-2026">
+          <div class="relative overflow-hidden aspect-[4/3] bg-[var(--bg-secondary)] flex items-center justify-center p-3">
+            <img src="assets/images/nti-certificate.webp" alt="NTI Artificial Intelligence Ambassador Certificate" loading="lazy" class="w-full h-full object-contain rounded-lg group-hover:scale-[1.02] transition-transform duration-400" />
+            <div class="absolute inset-0 bg-gradient-to-t from-[var(--bg-primary)]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+              <span class="px-4 py-1.5 rounded-full bg-[var(--accent-primary)] text-[var(--bg-primary)] text-xs font-bold flex items-center gap-2 shadow-lg">
+                <i class="fa-solid fa-magnifying-glass-plus"></i>
+                <span data-i18n="certClickZoom">Click to inspect in high resolution</span>
+              </span>
+            </div>
+          </div>
+          <div class="p-6 space-y-2 border-t border-[var(--border-hairline)] bg-[var(--bg-card)]">
+            <div class="flex items-center justify-between text-xs font-mono text-[var(--accent-primary)]">
+              <span data-i18n="cert1Issuer">Ministry of Communications (MCIT) • NTI &amp; ESE</span>
+              <span>80 Hours</span>
+            </div>
+            <h3 class="editorial-title text-lg font-serif text-[var(--text-primary)] group-hover:text-[var(--accent-primary)] transition-colors" data-i18n="cert1Title">
+              Artificial Intelligence Ambassadors Program
+            </h3>
+            <p class="text-xs text-[var(--text-secondary)] font-mono" data-i18n="cert1Meta">
+              Credential ID: AI (B9) - 1210 | 80 Training Hours
+            </p>
+          </div>
+        </div>
+
+        <!-- Certificate 2: Banque Misr EBSM Banking Fellowship -->
+        <div class="open-cert-modal glass-panel tilt-card rounded-2xl overflow-hidden cursor-pointer group"
+             data-cert-src="assets/images/bank-misr-certificate.webp"
+             data-cert-title="Certificate of Achievement — Banque Misr & Egyptian Banking System Model (EBSM)"
+             data-cert-meta="Financial Inclusion Session & Banking Operations & Training Bank Branch | Banque Misr Training">
+          <div class="relative overflow-hidden aspect-[4/3] bg-[var(--bg-secondary)] flex items-center justify-center p-3">
+            <img src="assets/images/bank-misr-certificate.webp" alt="Banque Misr EBSM Banking Fellowship Certificate" loading="lazy" class="w-full h-full object-contain rounded-lg group-hover:scale-[1.02] transition-transform duration-400" />
+            <div class="absolute inset-0 bg-gradient-to-t from-[var(--bg-primary)]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+              <span class="px-4 py-1.5 rounded-full bg-[var(--accent-primary)] text-[var(--bg-primary)] text-xs font-bold flex items-center gap-2 shadow-lg">
+                <i class="fa-solid fa-magnifying-glass-plus"></i>
+                <span data-i18n="certClickZoom">Click to inspect in high resolution</span>
+              </span>
+            </div>
+          </div>
+          <div class="p-6 space-y-2 border-t border-[var(--border-hairline)] bg-[var(--bg-card)]">
+            <div class="flex items-center justify-between text-xs font-mono text-[var(--accent-primary)]">
+              <span data-i18n="cert2Issuer">Banque Misr • Financial Inclusion &amp; Operations</span>
+              <span>Banking Fellowship</span>
+            </div>
+            <h3 class="editorial-title text-lg font-serif text-[var(--text-primary)] group-hover:text-[var(--accent-primary)] transition-colors" data-i18n="cert2Title">
+              Egyptian Banking System Model (EBSM)
+            </h3>
+            <p class="text-xs text-[var(--text-secondary)] font-mono" data-i18n="cert2Meta">
+              Banking Operations &amp; Branch Fellowship
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       Direct Contact Section (WhatsApp, LinkedIn, Email, Location - Tilt Cards)
+       ========================================================================= -->
+  <section id="contact" class="py-20 md:py-28 relative border-t border-[var(--border-hairline)]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Section Header -->
+      <div class="section-header text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <span class="text-xs font-mono uppercase tracking-[0.22em] text-[var(--accent-primary)]" data-i18n="contactSubtitle">
+          Get In Touch
+        </span>
+        <h2 class="editorial-title text-3xl sm:text-5xl font-serif text-[var(--text-primary)]" data-i18n="contactTitle">
+          Let's Collaborate on Your Next Solution
+        </h2>
+        <p class="text-[var(--text-secondary)] text-sm sm:text-base font-sans" data-i18n="contactDesc">
+          Whether you have an opportunity for a Web Developer, Data Engineer, or Data Analyst role, feel free to reach out directly via WhatsApp, LinkedIn, or Email.
+        </p>
+        <div class="w-16 h-[1.5px] bg-[var(--accent-primary)] mx-auto mt-3"></div>
+      </div>
+
+      <!-- Contact Channels Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        
+        <!-- WhatsApp Card -->
+        <a href="https://wa.me/201115137318" target="_blank" rel="noopener noreferrer" class="contact-card glass-panel tilt-card rounded-2xl p-7 sm:p-8 flex flex-col items-center text-center space-y-4 group">
+          <div class="w-14 h-14 rounded-full border border-[var(--border-hairline)] bg-[var(--bg-subtle)] text-[var(--accent-primary)] flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+            <i class="fa-brands fa-whatsapp"></i>
+          </div>
+          <div>
+            <h3 class="editorial-title text-lg font-serif text-[var(--text-primary)] group-hover:text-[var(--accent-primary)] transition-colors" data-i18n="whatsappLabel">
+              Instant Chat on WhatsApp
+            </h3>
+            <p class="text-xs text-[var(--text-secondary)] mt-1 font-mono" data-i18n="whatsappDesc">
+              +20 111 513 7318 &bull; Active &amp; Responsive
+            </p>
+          </div>
+          <span class="px-4 py-1.5 rounded-full border border-[var(--border-hairline)] bg-[var(--bg-subtle)] text-[var(--text-primary)] text-xs font-medium flex items-center gap-1.5">
+            <span>Send Direct Message</span>
+            <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-[var(--accent-primary)]"></i>
+          </span>
+        </a>
+
+        <!-- LinkedIn Card -->
+        <a href="https://linkedin.com/in/doaa-mohamed-091164375" target="_blank" rel="noopener noreferrer" class="contact-card glass-panel tilt-card rounded-2xl p-7 sm:p-8 flex flex-col items-center text-center space-y-4 group">
+          <div class="w-14 h-14 rounded-full border border-[var(--border-hairline)] bg-[var(--bg-subtle)] text-[var(--accent-primary)] flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </div>
+          <div>
+            <h3 class="editorial-title text-lg font-serif text-[var(--text-primary)] group-hover:text-[var(--accent-primary)] transition-colors" data-i18n="linkedinLabel">
+              Connect on LinkedIn
+            </h3>
+            <p class="text-xs text-[var(--text-secondary)] mt-1 font-mono truncate max-w-[220px]" data-i18n="linkedinDesc">
+              linkedin.com/in/doaa-mohamed-091164375
+            </p>
+          </div>
+          <span class="px-4 py-1.5 rounded-full border border-[var(--border-hairline)] bg-[var(--bg-subtle)] text-[var(--text-primary)] text-xs font-medium flex items-center gap-1.5">
+            <span>View Profile</span>
+            <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-[var(--accent-primary)]"></i>
+          </span>
+        </a>
+
+        <!-- Email Card -->
+        <a href="mailto:doaa.mhmd.xo@gmail.com" class="contact-card glass-panel tilt-card rounded-2xl p-7 sm:p-8 flex flex-col items-center text-center space-y-4 group">
+          <div class="w-14 h-14 rounded-full border border-[var(--border-hairline)] bg-[var(--bg-subtle)] text-[var(--accent-primary)] flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-envelope"></i>
+          </div>
+          <div>
+            <h3 class="editorial-title text-lg font-serif text-[var(--text-primary)] group-hover:text-[var(--accent-primary)] transition-colors" data-i18n="emailLabel">
+              Send an Email
+            </h3>
+            <p class="text-xs text-[var(--text-secondary)] mt-1 font-mono" data-i18n="emailDesc">
+              doaa.mhmd.xo@gmail.com
+            </p>
+          </div>
+          <span class="px-4 py-1.5 rounded-full border border-[var(--border-hairline)] bg-[var(--bg-subtle)] text-[var(--text-primary)] text-xs font-medium flex items-center gap-1.5">
+            <span>Compose Email</span>
+            <i class="fa-solid fa-paper-plane text-[10px] text-[var(--accent-primary)]"></i>
+          </span>
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       Editorial Footer
+       ========================================================================= -->
+  <footer class="py-10 border-t border-[var(--border-hairline)] text-center text-xs text-[var(--text-secondary)] font-mono relative z-10 bg-[var(--bg-primary)]">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2.5">
+        <span class="w-2 h-2 rounded-full bg-[var(--accent-primary)]"></span>
+        <span class="text-[var(--text-primary)] font-serif font-medium text-sm">Doaa Mohamed Salah</span>
+        <span class="text-[var(--border-hairline)]">&bull;</span>
+        <span data-i18n="contactLocation">Giza, Egypt</span>
+      </div>
+      <p data-i18n="footerText">
+        Editorial &amp; Minimalist Portfolio for Doaa Mohamed Salah.
+      </p>
+      <div class="flex items-center gap-5 text-sm">
+        <a href="https://wa.me/201115137318" target="_blank" rel="noopener noreferrer" class="text-[var(--text-secondary)] hover:text-[var(--accent-primary)] transition-colors" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="https://linkedin.com/in/doaa-mohamed-091164375" target="_blank" rel="noopener noreferrer" class="text-[var(--text-secondary)] hover:text-[var(--accent-primary)] transition-colors" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="mailto:doaa.mhmd.xo@gmail.com" class="text-[var(--text-secondary)] hover:text-[var(--accent-primary)] transition-colors" title="Email"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       Floating Action Button (WhatsApp Luxury Quick Connect)
+       ========================================================================= -->
+  <div class="fixed bottom-6 right-6 z-40 rtl:right-auto rtl:left-6">
+    <a href="https://wa.me/201115137318" target="_blank" rel="noopener noreferrer" class="wa-float-btn w-13 h-13 p-3.5 rounded-full flex items-center justify-center text-xl shadow-xl transition-all group relative" title="Chat on WhatsApp">
+      <i class="fa-brands fa-whatsapp"></i>
+      <span class="absolute right-16 rtl:right-auto rtl:left-16 px-3.5 py-1.5 rounded-full bg-[var(--bg-secondary)] text-[var(--text-primary)] text-xs font-medium whitespace-nowrap shadow-xl border border-[var(--border-hairline)] opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none font-sans">
+        Chat with Doaa on WhatsApp
+      </span>
+    </a>
+  </div>
+
+  <!-- =========================================================================
+       MODAL 1: Project Architecture & KPIs Details Modal
+       ========================================================================= -->
+  <div id="project-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 sm:p-6 modal-backdrop">
+    <div class="glass-panel bg-[var(--bg-secondary)] border border-[var(--border-hairline)] rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl relative p-6 sm:p-8">
+      <!-- Close button -->
+      <button id="close-project-modal" class="absolute top-5 right-5 rtl:right-auto rtl:left-5 text-[var(--text-secondary)] hover:text-[var(--text-primary)] p-2 rounded-full border border-[var(--border-hairline)] bg-[var(--bg-subtle)] transition-colors">
+        <i class="fa-solid fa-xmark text-sm"></i>
+      </button>
+
+      <!-- Dynamic Content Injection Container -->
+      <div id="project-modal-content">
+        <!-- Content injected via main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       MODAL 2: High-Resolution Certificate Lightbox Modal
+       ========================================================================= -->
+  <div id="cert-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 sm:p-6 modal-backdrop">
+    <div class="glass-panel bg-[var(--bg-secondary)] border border-[var(--border-hairline)] rounded-2xl max-w-4xl w-full shadow-2xl relative p-4 sm:p-6 flex flex-col items-center">
+      <!-- Close button -->
+      <button id="close-cert-modal" class="absolute top-4 right-4 rtl:right-auto rtl:left-4 text-[var(--text-secondary)] hover:text-[var(--text-primary)] p-2 rounded-full border border-[var(--border-hairline)] bg-[var(--bg-subtle)] transition-colors z-10">
+        <i class="fa-solid fa-xmark text-sm"></i>
+      </button>
+
+      <!-- Large Image Container -->
+      <div class="w-full flex items-center justify-center overflow-hidden rounded-xl bg-[var(--bg-primary)] p-2 sm:p-4 border border-[var(--border-hairline)]">
+        <img id="cert-modal-img" src="" alt="Enlarged Certificate" class="lightbox-img shadow-2xl" />
+      </div>
+
+      <!-- Caption & Metadata -->
+      <div class="w-full mt-4 text-center">
+        <h4 id="cert-modal-title" class="editorial-title text-base sm:text-lg font-serif text-[var(--text-primary)]"></h4>
+        <p id="cert-modal-meta" class="text-xs text-[var(--accent-primary)] font-mono mt-1"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       MODAL 3: Official CV Preview & Download Modal (Doaa Mohamed Salah - CV010.pdf)
+       ========================================================================= -->
+  <div id="cv-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-3 sm:p-6 modal-backdrop">
+    <div class="glass-panel bg-[var(--bg-secondary)] border border-[var(--border-hairline)] rounded-2xl max-w-5xl w-full h-[92vh] shadow-2xl relative flex flex-col overflow-hidden">
+      
+      <!-- Modal Header -->
+      <div class="px-6 py-4 border-b border-[var(--border-hairline)] flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-full border border-[var(--border-hairline)] bg-[var(--bg-subtle)] text-[var(--accent-primary)] flex items-center justify-center">
+            <i class="fa-solid fa-file-pdf text-sm"></i>
+          </div>
+          <div>
+            <h3 class="editorial-title text-sm sm:text-base font-serif text-[var(--text-primary)] font-medium" data-i18n="cvModalTitle">
+              Doaa Mohamed Salah — Official Curriculum Vitae
+            </h3>
+            <span class="text-xs text-[var(--text-secondary)] font-mono">Doaa Mohamed Salah - CV010.pdf &bull; 4 Pages</span>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <!-- Download PDF Button -->
+          <a href="Doaa Mohamed Salah - CV010.pdf" download="Doaa_Mohamed_Salah_CV.pdf" class="classy-pill-btn btn-primary-classy text-xs py-2 px-4">
+            <i class="fa-solid fa-download text-xs"></i>
+            <span data-i18n="btnDownloadCV">Download PDF</span>
+          </a>
+          <!-- Close button -->
+          <button id="close-cv-modal" class="text-[var(--text-secondary)] hover:text-[var(--text-primary)] p-2 rounded-full border border-[var(--border-hairline)] bg-[var(--bg-subtle)] transition-colors">
+            <i class="fa-solid fa-xmark text-sm"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- PDF Viewer Frame -->
+      <div class="flex-1 w-full bg-[var(--bg-primary)] relative">
+        <iframe src="Doaa Mohamed Salah - CV010.pdf#toolbar=1&navpanes=0" class="w-full h-full border-0" title="Doaa Mohamed Salah CV">
+          <div class="p-8 text-center text-[var(--text-secondary)] font-sans">
+            <p>Your browser does not support inline PDF viewing.</p>
+            <a href="Doaa Mohamed Salah - CV010.pdf" download class="mt-4 inline-block classy-pill-btn btn-primary-classy">
+              Download PDF Directly
+            </a>
+          </div>
+        </iframe>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       Scripts: Lenis Smooth Scroll, GSAP, ScrollTrigger & Editorial Logic
+       ========================================================================= -->
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>

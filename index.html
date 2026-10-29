@@ -10,7 +10,7 @@
   <!-- Google Fonts: Playfair Display + Plus Jakarta Sans + Amiri / Cairo + Fira Code -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@400;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@400;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
 
   <!-- FontAwesome 6 CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -32,7 +32,8 @@
             }
           },
           fontFamily: {
-            serif: ['Playfair Display', 'Georgia', 'serif'],
+            serif: ['Playfair Display', 'Cormorant Garamond', 'Georgia', 'serif'],
+            display: ['Cormorant Garamond', 'Playfair Display', 'Georgia', 'serif'],
             sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
             mono: ['Fira Code', 'monospace']
           }
@@ -54,7 +55,7 @@
     <!-- Ambient subtle neutral aura behind monogram -->
     <div class="absolute w-[450px] h-[450px] rounded-full bg-white/[0.03] blur-[130px] pointer-events-none"></div>
     
-    <div id="preloader-content" class="relative z-10 flex flex-col items-center max-w-md w-full px-8 text-center">
+    <div id="preloader-content" class="relative z-10 flex flex-col items-center max-w-md w-full px-8 text-center opacity-0">
       
       <!-- Elegant Editorial Serif Monogram -->
       <div class="mb-6 flex flex-col items-center justify-center">
@@ -184,7 +185,7 @@
   <!-- =========================================================================
        Hero Section (Editorial Serif & Glass Architectural Visual - NO PHOTO)
        ========================================================================= -->
-  <section class="relative pt-32 pb-20 md:pt-44 md:pb-28 overflow-hidden">
+  <section class="relative pt-36 pb-24 md:pt-52 md:pb-36 overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
         
@@ -208,7 +209,7 @@
           </div>
 
           <!-- Subtitle / Role -->
-          <div class="inline-block text-base sm:text-lg font-serif italic text-[var(--accent-primary)]">
+          <div class="hero-role-wrap inline-block text-base sm:text-lg font-serif italic text-[var(--accent-primary)]">
             <span data-i18n="heroRole">Web Developer | Data Engineer &amp; Data Analyst</span>
           </div>
 
@@ -236,7 +237,7 @@
           </div>
 
           <!-- Quick Editorial Meta -->
-          <div class="pt-4 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-xs text-[var(--text-secondary)] font-mono border-t border-[var(--border-hairline)] max-w-lg">
+          <div class="hero-meta pt-4 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-xs text-[var(--text-secondary)] font-mono border-t border-[var(--border-hairline)] max-w-lg">
             <div class="flex items-center gap-1.5">
               <i class="fa-solid fa-location-dot text-[var(--accent-primary)]"></i>
               <span>Giza, Egypt</span>
@@ -302,11 +303,11 @@
   <!-- =========================================================================
        About & BIS Academic Foundation Section
        ========================================================================= -->
-  <section id="about" class="py-20 md:py-28 relative border-t border-[var(--border-hairline)]">
+  <section id="about" class="py-28 md:py-36 relative border-t border-[var(--border-hairline)]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       
       <!-- Section Header -->
-      <div class="section-header text-center max-w-3xl mx-auto mb-16 space-y-3">
+      <div class="section-header text-center max-w-3xl mx-auto mb-16 md:mb-20 space-y-3">
         <span class="text-xs font-mono uppercase tracking-[0.22em] text-[var(--accent-primary)]" data-i18n="aboutSubtitle">
           Bridging Software Architecture and Data Analytics
         </span>
@@ -433,11 +434,11 @@
   <!-- =========================================================================
        Experience & Training Timeline Section
        ========================================================================= -->
-  <section id="experience" class="py-20 md:py-28 relative border-t border-[var(--border-hairline)]">
+  <section id="experience" class="py-28 md:py-36 relative border-t border-[var(--border-hairline)]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       
       <!-- Section Header -->
-      <div class="section-header text-center max-w-3xl mx-auto mb-16 space-y-3">
+      <div class="section-header text-center max-w-3xl mx-auto mb-16 md:mb-20 space-y-3">
         <span class="text-xs font-mono uppercase tracking-[0.22em] text-[var(--accent-primary)]" data-i18n="expSubtitle">
           Career &amp; Training Milestones
         </span>
@@ -600,7 +601,7 @@
   <!-- =========================================================================
        Projects Showcase (NO GITHUB LINKS - Architecture & KPIs Details Inside)
        ========================================================================= -->
-  <section id="projects" class="py-20 md:py-28 relative border-t border-[var(--border-hairline)]">
+  <section id="projects" class="py-28 md:py-36 relative border-t border-[var(--border-hairline)]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       
       <!-- Section Header -->
@@ -793,11 +794,11 @@
   <!-- =========================================================================
        Skills Matrix Section (4 Editorial Categories - Tilt Cards)
        ========================================================================= -->
-  <section id="skills" class="py-20 md:py-28 relative border-t border-[var(--border-hairline)]">
+  <section id="skills" class="py-28 md:py-36 relative border-t border-[var(--border-hairline)]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       
       <!-- Section Header -->
-      <div class="section-header text-center max-w-3xl mx-auto mb-16 space-y-3">
+      <div class="section-header text-center max-w-3xl mx-auto mb-16 md:mb-20 space-y-3">
         <span class="text-xs font-mono uppercase tracking-[0.22em] text-[var(--accent-primary)]" data-i18n="skillsSubtitle">
           Technical Proficiencies
         </span>
@@ -901,11 +902,11 @@
   <!-- =========================================================================
        Certificates Gallery (Accredited Credentials - Lightbox Modal)
        ========================================================================= -->
-  <section id="certificates" class="py-20 md:py-28 relative border-t border-[var(--border-hairline)]">
+  <section id="certificates" class="py-28 md:py-36 relative border-t border-[var(--border-hairline)]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       
       <!-- Section Header -->
-      <div class="section-header text-center max-w-3xl mx-auto mb-16 space-y-3">
+      <div class="section-header text-center max-w-3xl mx-auto mb-16 md:mb-20 space-y-3">
         <span class="text-xs font-mono uppercase tracking-[0.22em] text-[var(--accent-primary)]" data-i18n="certsSubtitle">
           Accredited Credentials
         </span>
@@ -982,11 +983,11 @@
   <!-- =========================================================================
        Direct Contact Section (WhatsApp, LinkedIn, Email, Location - Tilt Cards)
        ========================================================================= -->
-  <section id="contact" class="py-20 md:py-28 relative border-t border-[var(--border-hairline)]">
+  <section id="contact" class="py-28 md:py-36 relative border-t border-[var(--border-hairline)]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       
       <!-- Section Header -->
-      <div class="section-header text-center max-w-3xl mx-auto mb-16 space-y-3">
+      <div class="section-header text-center max-w-3xl mx-auto mb-16 md:mb-20 space-y-3">
         <span class="text-xs font-mono uppercase tracking-[0.22em] text-[var(--accent-primary)]" data-i18n="contactSubtitle">
           Get In Touch
         </span>

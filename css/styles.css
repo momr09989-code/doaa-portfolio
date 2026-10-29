@@ -1,83 +1,87 @@
 /* ==========================================================================
    Doaa Mohamed Salah - Personal Portfolio Stylesheet
-   Aesthetic: Quiet Luxury & Editorial Charcoal
+   Aesthetic: Ultra-Luxurious Editorial & Quiet Luxury Charcoal
    Palette: #181818 | #242424 | #C09891 | #BEA8A7 | #F4DBD8
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@400;600;700&family=Fira+Code:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@400;600;700&family=Fira+Code:wght@400;500&display=swap');
 
 /* ==========================================================================
-   Strict Color System & Theme Variables
+   1. Strict 5-Shade Luxury System & CSS Theme Variables
    ========================================================================== */
 :root {
-  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-serif: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  --font-display: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
   --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
   --font-ar-serif: 'Amiri', serif;
   --font-ar-sans: 'Cairo', system-ui, sans-serif;
   --font-mono: 'Fira Code', monospace;
 
-  /* --- Dark Mode (Default - Editorial Charcoal & Soft Silver) --- */
-  --bg-primary: #181818;                 /* Deep charcoal/off-black tone - strictly desaturated */
-  --bg-secondary: #242424;               /* Medium-dark slate gray tone */
-  --bg-nav: rgba(24, 24, 24, 0.92);
-  --bg-card: rgba(40, 40, 40, 0.70);    /* Desaturated gray with backdrop blur */
-  --bg-card-hover: rgba(50, 50, 50, 0.85);
-  --bg-subtle: rgba(255, 255, 255, 0.04);
+  /* --- Dark Mode (Default - Ultra-Luxurious Editorial Charcoal) --- */
+  --bg-primary: #181818;                 /* Base Background: Deep Charcoal */
+  --bg-secondary: #242424;               /* Secondary Charcoal */
+  --bg-nav: rgba(24, 24, 24, 0.70);      /* Translucent elevated header */
+  --bg-card: rgba(36, 36, 36, 0.50);     /* Elevated Surfaces: rgba(36,36,36,0.50) */
+  --bg-card-hover: rgba(45, 45, 45, 0.65);
+  --bg-subtle: rgba(255, 255, 255, 0.035);
 
-  --accent-primary: #C09891;            /* Soft silver / dusty warm gray */
-  --accent-secondary: #BEA8A7;          /* Pale ash gray */
-  --text-primary: #F4DBD8;              /* Soft luxurious off-white */
-  --text-secondary: #BEA8A7;            /* Muted ash gray */
-  --text-muted: #888888;                /* Clean neutral muted gray */
+  --accent-primary: #C09891;            /* Primary Accent: Muted Rose Gold / Silver */
+  --accent-secondary: #BEA8A7;          /* Secondary Accent: Ash Gray */
+  --text-primary: #F4DBD8;              /* Typography Headings: Soft Silk Cream */
+  --text-secondary: #BEA8A7;            /* Body & Descriptions: Ash Gray */
+  --text-muted: #888888;                /* Refined Muted Gray */
 
-  --border-hairline: rgba(255, 255, 255, 0.07);
-  --border-hover: rgba(192, 152, 145, 0.35);
-  --border-strong: rgba(192, 152, 145, 0.60);
+  --border-hairline: rgba(192, 152, 145, 0.15); /* Refined 1px solid rgba(192,152,145,0.15) */
+  --border-hover: rgba(192, 152, 145, 0.38);
+  --border-strong: rgba(192, 152, 145, 0.65);
 
-  --sheen-spotlight: rgba(255, 255, 255, 0.04);
-  --ambient-glow-1: rgba(255, 255, 255, 0.025);
-  --ambient-glow-2: rgba(192, 152, 145, 0.025);
+  --sheen-spotlight: rgba(192, 152, 145, 0.12); /* Soft Rose Gold Sheen following cursor */
+  --ambient-glow-1: rgba(192, 152, 145, 0.035);
+  --ambient-glow-2: rgba(255, 255, 255, 0.02);
 
-  --card-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.50);
-  --modal-backdrop: rgba(12, 12, 12, 0.88);
+  /* Diffused Ambient Soft Shadow */
+  --card-shadow: 0 24px 48px rgba(0, 0, 0, 0.30);
+  --card-shadow-hover: 0 32px 64px -8px rgba(0, 0, 0, 0.40);
+  --modal-backdrop: rgba(14, 14, 14, 0.88);
 }
 
-/* --- Light Mode (Classic Alabaster & Muted Slate) --- */
+/* --- Light Mode (Silk Cream & Warm Slate Luxury) --- */
 html.light {
-  --bg-primary: #F4DBD8;                 /* Soft, silky off-white as main canvas */
-  --bg-secondary: #FFFFFF;
-  --bg-nav: rgba(244, 219, 216, 0.92);
-  --bg-card: #FFFFFF;                    /* Crisp white with subtle border */
-  --bg-card-hover: #FAFAFA;
+  --bg-primary: #F4DBD8;                 /* Base Background: Silk Cream */
+  --bg-secondary: #EDE0DD;               /* Soft warm alabaster */
+  --bg-nav: rgba(244, 219, 216, 0.78);
+  --bg-card: rgba(255, 255, 255, 0.68);  /* Crisp elevated milk glass */
+  --bg-card-hover: rgba(255, 255, 255, 0.85);
   --bg-subtle: rgba(24, 24, 24, 0.04);
 
-  --accent-primary: #242424;            /* Deep charcoal for primary buttons and markers */
-  --accent-secondary: #775144;          /* Medium-dark gray for borders and subtle details */
-  --text-primary: #181818;              /* Off-black for sharp typography */
-  --text-secondary: #555555;            /* Muted gray for readable text */
-  --text-muted: #777777;
+  --accent-primary: #775144;            /* Warm mocha for primary buttons in Light */
+  --accent-secondary: #C09891;          /* Rose Gold accents */
+  --text-primary: #181818;              /* Typography Headings: Deep Charcoal */
+  --text-secondary: #6B4E47;            /* Readable warm slate body */
+  --text-muted: #8A6D66;
 
-  --border-hairline: rgba(24, 24, 24, 0.08);
-  --border-hover: rgba(24, 24, 24, 0.25);
-  --border-strong: rgba(24, 24, 24, 0.45);
+  --border-hairline: rgba(192, 152, 145, 0.28);
+  --border-hover: rgba(119, 81, 68, 0.40);
+  --border-strong: rgba(119, 81, 68, 0.60);
 
-  --sheen-spotlight: rgba(24, 24, 24, 0.03);
-  --ambient-glow-1: rgba(24, 24, 24, 0.02);
-  --ambient-glow-2: rgba(24, 24, 24, 0.02);
+  --sheen-spotlight: rgba(192, 152, 145, 0.18);
+  --ambient-glow-1: rgba(192, 152, 145, 0.06);
+  --ambient-glow-2: rgba(119, 81, 68, 0.04);
 
-  --card-shadow: 0 12px 32px rgba(24, 24, 24, 0.04);
+  --card-shadow: 0 24px 48px rgba(119, 81, 68, 0.08);
+  --card-shadow-hover: 0 32px 64px -8px rgba(119, 81, 68, 0.14);
   --modal-backdrop: rgba(24, 24, 24, 0.60);
 }
 
 /* ==========================================================================
-   Base & Global Typography
+   2. Base Global Styles & Typography
    ========================================================================== */
 html {
   scroll-behavior: initial;
   background-color: var(--bg-primary);
   color: var(--text-primary);
   font-family: var(--font-sans);
-  transition: background-color 0.5s cubic-bezier(0.16, 1, 0.3, 1), color 0.5s ease;
+  transition: background-color 0.6s cubic-bezier(0.16, 1, 0.3, 1), color 0.6s ease;
 }
 
 html[dir="rtl"] {
@@ -90,19 +94,30 @@ body {
   color: var(--text-primary);
   min-height: 100vh;
   position: relative;
-  transition: background-color 0.5s cubic-bezier(0.16, 1, 0.3, 1), color 0.5s ease;
+  transition: background-color 0.6s cubic-bezier(0.16, 1, 0.3, 1), color 0.6s ease;
+  line-height: 1.65;
 }
 
-/* Editorial Serif Headings */
+/* Luxurious Editorial Serif Titles */
 .editorial-title {
   font-family: var(--font-serif);
-  letter-spacing: -0.025em;
+  letter-spacing: -0.02em;
   font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.15;
 }
 
 html[dir="rtl"] .editorial-title {
   font-family: var(--font-ar-serif);
   letter-spacing: normal;
+  line-height: 1.35;
+}
+
+.display-title {
+  font-family: var(--font-display);
+  letter-spacing: -0.025em;
+  font-weight: 500;
+  line-height: 1.08;
 }
 
 .serif-italic {
@@ -119,8 +134,21 @@ html[dir="rtl"] .editorial-title {
   unicode-bidi: isolate;
 }
 
+/* Section Spacing & Breathing Room */
+.luxury-section {
+  padding-top: 6.5rem;
+  padding-bottom: 6.5rem;
+}
+
+@media (min-width: 768px) {
+  .luxury-section {
+    padding-top: 8.5rem;
+    padding-bottom: 8.5rem;
+  }
+}
+
 /* ==========================================================================
-   Ambient Background Lighting (Subtle Cashmere / Rose Sheen)
+   3. Ambient Background Lighting Orbs
    ========================================================================== */
 .ambient-glow-mesh {
   position: fixed;
@@ -133,24 +161,24 @@ html[dir="rtl"] .editorial-title {
 .glow-orb {
   position: absolute;
   border-radius: 50%;
-  filter: blur(140px);
+  filter: blur(160px);
   will-change: transform;
   pointer-events: none;
-  transition: background 0.6s ease;
+  transition: background 0.8s ease;
 }
 
 .glow-orb-1 {
-  width: 600px;
-  height: 600px;
-  top: -5%;
+  width: 650px;
+  height: 650px;
+  top: -8%;
   right: -10%;
   background: radial-gradient(circle, var(--ambient-glow-1) 0%, transparent 70%);
 }
 
 .glow-orb-2 {
-  width: 550px;
-  height: 550px;
-  bottom: 10%;
+  width: 600px;
+  height: 600px;
+  bottom: 8%;
   left: -8%;
   background: radial-gradient(circle, var(--ambient-glow-2) 0%, transparent 70%);
 }
@@ -162,32 +190,31 @@ html[dir="rtl"] .editorial-title {
 }
 
 /* ==========================================================================
-   Editorial Hero Profile Portrait & Luxury Framing
+   4. Editorial Hero Profile Portrait & Luxury Framing
    ========================================================================== */
 .hero-profile-floating {
   will-change: transform;
 }
 
 .hero-profile-card {
-  border-radius: 26px;
+  border-radius: 28px;
   background: var(--bg-card);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.40);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-hairline);
+  box-shadow: var(--card-shadow);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
   position: relative;
   transition: border-color 0.4s ease, box-shadow 0.4s ease;
 }
 
-html.light .hero-profile-card {
-  background: #FFFFFF;
-  border: 1px solid rgba(24, 24, 24, 0.08);
-  box-shadow: 0 12px 32px rgba(24, 24, 24, 0.04);
+.hero-profile-card:hover {
+  border-color: var(--border-hover);
+  box-shadow: var(--card-shadow-hover);
 }
 
 .hero-profile-img-wrap {
   aspect-ratio: 3 / 4;
-  border-radius: 20px;
+  border-radius: 22px;
   overflow: hidden;
   position: relative;
   border: 1px solid rgba(255, 255, 255, 0.06);
@@ -195,7 +222,7 @@ html.light .hero-profile-card {
 }
 
 html.light .hero-profile-img-wrap {
-  border: 1px solid rgba(24, 24, 24, 0.08);
+  border: 1px solid rgba(192, 152, 145, 0.2);
   background: #EDE0DD;
 }
 
@@ -204,11 +231,11 @@ html.light .hero-profile-img-wrap {
   height: 100%;
   object-fit: cover;
   object-position: center top;
-  transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .hero-profile-card:hover .hero-profile-img {
-  transform: scale(1.035);
+  transform: scale(1.03);
 }
 
 .hero-profile-badge {
@@ -216,26 +243,26 @@ html.light .hero-profile-img-wrap {
   bottom: 1rem;
   left: 1rem;
   right: 1rem;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  background: rgba(30, 30, 30, 0.88);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 14px;
-  padding: 0.75rem 0.95rem;
-  box-shadow: 0 12px 28px -6px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  background: rgba(28, 28, 28, 0.85);
+  border: 1px solid var(--border-hairline);
+  border-radius: 16px;
+  padding: 0.85rem 1.1rem;
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.35);
   pointer-events: none;
   z-index: 2;
-  transition: background-color 0.4s ease;
+  transition: background-color 0.4s ease, border-color 0.4s ease;
 }
 
 html.light .hero-profile-badge {
-  background: rgba(255, 255, 255, 0.95);
-  border: 1px solid rgba(24, 24, 24, 0.08);
-  box-shadow: 0 12px 28px -6px rgba(24, 24, 24, 0.06);
+  background: rgba(255, 255, 255, 0.90);
+  border: 1px solid rgba(192, 152, 145, 0.3);
+  box-shadow: 0 16px 32px rgba(119, 81, 68, 0.08);
 }
 
 /* ==========================================================================
-   Luxury Preloader Page
+   5. Cinematic Preloader Page
    ========================================================================== */
 #preloader {
   background-color: #181818;
@@ -256,7 +283,7 @@ html.light .hero-profile-badge {
   font-style: italic;
   letter-spacing: 0.28em;
   color: #C09891;
-  text-shadow: 0 0 20px rgba(192, 152, 145, 0.25);
+  text-shadow: 0 0 24px rgba(192, 152, 145, 0.35);
 }
 
 .preloader-line-track {
@@ -274,27 +301,28 @@ html.light .hero-profile-badge {
   height: 100%;
   width: 0%;
   background: linear-gradient(90deg, #242424, #C09891, #F4DBD8);
-  box-shadow: 0 0 10px rgba(192, 152, 145, 0.4);
+  box-shadow: 0 0 12px rgba(192, 152, 145, 0.45);
 }
 
 /* ==========================================================================
-   Classy Cards & 3D Tilt Engine
+   6. Elevated Glassmorphic Surfaces & Subtle 3D Card Tilt
    ========================================================================== */
 .glass-panel {
   background: var(--bg-card);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
   border: 1px solid var(--border-hairline);
   box-shadow: var(--card-shadow);
-  transition: border-color 0.35s ease, background-color 0.45s ease, box-shadow 0.35s ease;
+  transition: border-color 0.4s ease, background-color 0.5s ease, box-shadow 0.4s ease;
   position: relative;
 }
 
 .glass-panel:hover {
   border-color: var(--border-hover);
+  box-shadow: var(--card-shadow-hover);
 }
 
-/* 3D Perspective Tilt Card */
+/* 3D Perspective Tilt Card Container */
 .tilt-card {
   transform-style: preserve-3d;
   will-change: transform;
@@ -302,20 +330,20 @@ html.light .hero-profile-badge {
   overflow: hidden;
 }
 
-/* Cursor Sheen Spotlight Overlay */
+/* Refined Cursor Sheen Gradient Overlay (Simulating Light on Luxury Glass) */
 .tilt-card::after {
   content: '';
   position: absolute;
   inset: 0;
   border-radius: inherit;
   background: radial-gradient(
-    circle 360px at var(--mouse-x, -1000px) var(--mouse-y, -1000px),
+    circle 340px at var(--mouse-x, -1000px) var(--mouse-y, -1000px),
     var(--sheen-spotlight),
-    transparent 65%
+    transparent 70%
   );
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.35s ease;
   z-index: 10;
 }
 
@@ -323,40 +351,49 @@ html.light .hero-profile-badge {
   opacity: 1;
 }
 
-/* Editorial Pill Buttons */
+/* ==========================================================================
+   7. Buttons & Badges (Muted Rose Gold & Warm Charcoal)
+   ========================================================================== */
 .classy-pill-btn {
   border-radius: 9999px;
-  padding: 0.75rem 1.75rem;
+  padding: 0.85rem 2rem;
   font-weight: 500;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.025em;
   font-size: 0.875rem;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.55rem;
 }
 
 .btn-primary-classy {
   background: var(--accent-primary);
   color: #181818;
-  box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 10px 28px -4px rgba(0, 0, 0, 0.32);
 }
 
 html.light .btn-primary-classy {
-  background: #242424;
+  background: var(--accent-primary);
   color: #F4DBD8;
-  box-shadow: 0 8px 24px -4px rgba(24, 24, 24, 0.15);
+  box-shadow: 0 10px 28px -4px rgba(119, 81, 68, 0.20);
 }
 
 .btn-primary-classy:hover {
   transform: translateY(-2px);
   filter: brightness(1.08);
+  box-shadow: 0 16px 36px -4px rgba(0, 0, 0, 0.38);
+}
+
+html.light .btn-primary-classy:hover {
+  box-shadow: 0 16px 36px -4px rgba(119, 81, 68, 0.28);
 }
 
 .btn-secondary-classy {
   background: var(--bg-subtle);
   color: var(--text-primary);
   border: 1px solid var(--border-hairline);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 }
 
 .btn-secondary-classy:hover {
@@ -374,10 +411,10 @@ html.light .btn-secondary-classy:hover {
   background: var(--bg-subtle);
   color: var(--text-secondary);
   border: 1px solid var(--border-hairline);
-  padding: 0.35rem 0.75rem;
+  padding: 0.4rem 0.85rem;
   border-radius: 9999px;
   font-size: 0.75rem;
-  letter-spacing: 0.015em;
+  letter-spacing: 0.02em;
   transition: all 0.25s ease;
   display: inline-flex;
   align-items: center;
@@ -388,26 +425,26 @@ html.light .btn-secondary-classy:hover {
   transform: translateY(-2px);
   border-color: var(--accent-primary);
   color: var(--text-primary);
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(192, 152, 145, 0.08);
 }
 
 html.light .tech-tag:hover {
-  background: rgba(24, 24, 24, 0.05);
+  background: rgba(119, 81, 68, 0.08);
 }
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 7px;
+  width: 6px;
 }
 ::-webkit-scrollbar-track {
   background: var(--bg-primary);
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(192, 152, 145, 0.25);
   border-radius: 4px;
 }
 html.light ::-webkit-scrollbar-thumb {
-  background: rgba(24, 24, 24, 0.20);
+  background: rgba(119, 81, 68, 0.25);
 }
 ::-webkit-scrollbar-thumb:hover {
   background: var(--accent-primary);
@@ -415,33 +452,37 @@ html.light ::-webkit-scrollbar-thumb {
 
 /* Floating WhatsApp Button */
 .wa-float-btn {
-  background: #242424;
-  color: #F4DBD8;
-  box-shadow: 0 10px 30px -4px rgba(0, 0, 0, 0.45);
-  border: 1px solid rgba(255, 255, 255, 0.10);
-  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  background: var(--bg-card);
+  color: var(--text-primary);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+  border: 1px solid var(--border-hairline);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .wa-float-btn:hover {
-  transform: translateY(-4px) scale(1.05);
-  background: #C09891;
+  transform: translateY(-3px) scale(1.05);
+  background: var(--accent-primary);
   color: #181818;
-  box-shadow: 0 14px 36px -4px rgba(0, 0, 0, 0.40);
+  border-color: var(--accent-primary);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
 }
 
 /* Modals */
 .modal-backdrop {
   background-color: var(--modal-backdrop);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
 }
 
 /* Lightbox Image Preview */
 .lightbox-img {
   max-height: 84vh;
   object-fit: contain;
-  border-radius: 0.75rem;
+  border-radius: 1rem;
   border: 1px solid var(--border-hairline);
+  box-shadow: 0 32px 64px rgba(0, 0, 0, 0.45);
 }
 
 /* Lenis Smooth Scroll Recommended CSS */
